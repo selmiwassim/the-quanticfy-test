@@ -1,11 +1,17 @@
+import NavigationBar from "./navBar";
+
+const HomePage = () => {
 
 
-function HomePage() {
+  
 
     const imageUrl ="https://img.freepik.com/vecteurs-libre/personnes-dessinees-main-dans-collection-du-parc_23-2148157514.jpg?t=st=1719230338~exp=1719233938~hmac=0e7b282634dcab606a41650dad9e4f48f64273b93a5d443ef167aad9b5e77921&w=740"
 
     return (
+      <>       
+        <NavigationBar/>
         <div className="home-page">
+
           <div className="content">
             <div className="left-section">
               <h1 className="section">Bienvenue à Paris!</h1>
@@ -21,10 +27,8 @@ function HomePage() {
             </div>
           </div>
         </div>
+        </>
       );
-    
-
-
 }
 
 export default HomePage;

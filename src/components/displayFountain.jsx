@@ -1,6 +1,8 @@
 import { fetchFountains } from "../services/fetchFountain";
 import React, { useState, useEffect } from 'react';
 import FiltersFoutains from "./filtersFountain";
+import NavigationBar from "./navBar";
+
 
 
 
@@ -36,6 +38,7 @@ const DisplayFountains = () => {
 
   return (
     <div>
+      <NavigationBar/>
       <h2 className="title" >Fontaines à Paris</h2>
 
       <FiltersFoutains places={places} setFilteredPlaces={handleFilteredPlaces} loading={loading} />

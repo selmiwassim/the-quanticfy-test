@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchIslands } from '../services/fetchIslands';
 import '../index.css'; 
 import FiltersIslands from './filtersIslands';
+import NavigationBar from './navBar';
 
 
 const DisplayIslands = () => {
@@ -37,6 +38,8 @@ const DisplayIslands = () => {
 
   return (
     <div>
+            <NavigationBar/>
+
       <h2 className="title">Ilots de fraîcheur à Paris</h2>
       <FiltersIslands places={places} setFilteredPlaces={handleFilteredPlaces} loading={loading} />
       <table className="custom-table">

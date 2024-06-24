@@ -1,5 +1,4 @@
-import { useState } from 'react'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DisplayIslands from './components/displayIslands'
 import DisplayFountains from './components/displayFountain' 
 import NavigationBar from './components/navBar'
@@ -7,12 +6,17 @@ import HomePage from './components/homePage';
 
 
 const App = () => {
-  const [display, setDisplay] = useState('Home'); 
 
   return (
     <div>
-      <NavigationBar display={display} setDisplay={setDisplay} />
-      {display === 'Islands' ? <DisplayIslands /> : display === 'Fountains'  ? <DisplayFountains /> : <HomePage/>}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/islands" element={<DisplayIslands />} />
+          <Route path="/fountains" element={<DisplayFountains />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

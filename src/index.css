@@ -6,6 +6,7 @@
 
 /* Navigation Bar */
 
+
 .nav-bar {
   display: flex;
   align-items: center;
@@ -16,9 +17,10 @@
 .nav-bar-logo {
   height: 80px; 
   margin-right: 40px; 
+  cursor: pointer;
 }
 
-.nav-bar-item {
+nav a{
   margin-right: 60px; 
   font-size: 18px;
   font-weight: bold; 
@@ -26,22 +28,17 @@
   background-color: transparent; 
   cursor: pointer; 
   transition: color 0.3s; 
+  text-decoration: none;
 }
 
-.nav-bar-item:hover {
-  color: #511d89; 
+nav a:hover{
+  color:#511d89;
+  text-decoration: underline;
 }
 
-.nav-bar-item.selected {
-  color: #5f259f; 
-}
-
-.nav-bar-item:last-child {
-  margin-right: 0; 
-}
-
-.selected {
-  font-weight: bold;
+nav a.active{
+  color: #511d89;
+  text-decoration: underline;
 }
 
 .se-connecter-button {
