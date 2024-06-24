@@ -1,0 +1,279 @@
+* {
+    font-family: 'nexa', sans-serif;
+    background-color: white;
+}
+
+
+/* Navigation Bar */
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+}
+
+.nav-bar-logo {
+  height: 80px; 
+  margin-right: 40px; 
+}
+
+.nav-bar-item {
+  margin-right: 60px; 
+  font-size: 18px;
+  font-weight: bold; 
+  color: #494949;
+  background-color: transparent; 
+  cursor: pointer; 
+  transition: color 0.3s; 
+}
+
+.nav-bar-item:hover {
+  color: #511d89; 
+}
+
+.nav-bar-item.selected {
+  color: #5f259f; 
+}
+
+.nav-bar-item:last-child {
+  margin-right: 0; 
+}
+
+.selected {
+  font-weight: bold;
+}
+
+.se-connecter-button {
+  margin-left: auto;
+}
+
+.se-connecter-button button {
+  background-color: #5f259f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.se-connecter-button button:hover {
+  background-color: #511d89;
+}
+  
+
+/* HOME PAGE  */
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.section{
+  color: #511d89;
+  font-size: 40px;
+  padding-bottom: 25px;
+}
+.subsection{
+  font-size: 16px;
+  padding-bottom: 25px;
+
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.left-section {
+  flex: 1;
+  text-align: left;
+}
+
+.right-section {
+  flex: 1;
+  text-align: right;
+}
+
+.image-wrapper {
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.start-button {
+  background-color: #5f259f;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #511d89;
+}
+
+  
+  
+
+
+/* Title */
+
+.title {
+  font-size: 32px; 
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
+/* Filters */ 
+
+.search-filters-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  width: 95%;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filters-container {
+  margin-left: 10px;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #5f259f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.filter-icon{
+  margin-right:  5px ;
+  color: white;
+  background-color: transparent;
+}
+
+.filter-button:hover {
+  background-color: #4b1d7d;
+}
+
+.extra-filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff; 
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.extra-filters-container label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 45%;
+}
+
+.extra-filters-container select,
+.extra-filters-container input[type="date"] {
+  margin-right: 15px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.remove-filters {
+  margin-top: 20px;
+  height: 20px;
+  padding:  10px;
+  font-size: 16px;
+  color: white;
+  background-color: #d9534f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: auto;
+}
+
+.remove-filters:hover {
+  background-color: #c9302c;
+}
+
+@media (max-width: 768px) {
+  .extra-filters-container label {
+    width: 100%;
+  }
+}
+  
+/* Table */
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    background-color: white;
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .custom-table th {
+    background-color: #5f259f;
+    color: white;
+  }
+  
+  .custom-table td {
+    width: 20%; 
+  }
+  
+  .custom-table td:first-child {
+    width: 30%; 
+  }
+.table-header {
+    background-color: white;
+    color: #5f259f;
+  }
+
