@@ -71,10 +71,10 @@ const DisplayIslands = () => {
                           
                           return (
                               <tr key={place.id}>
-                                  <td>{place.nom}</td>
-                                  <td>{place.type}</td>
-                                  <td>{place.adresse}</td>
-                                  <td>{place.cout}</td>
+                                  <td>{place.nom.charAt(0).toUpperCase() + place.nom.slice(1).toLowerCase()}</td>
+                                  <td>{place.type.charAt(0).toUpperCase() + place.type.slice(1).toLowerCase()}</td>
+                                  <td>{place.adresse.charAt(0).toUpperCase() + place.adresse.slice(1).toLowerCase()}</td>
+                                  <td>{place.cout.charAt(0).toUpperCase() + place.cout.slice(1).toLowerCase()}</td>
                                   <td>{"du " + place.debut + " au " + place.fin}</td>
                               </tr>
                           );

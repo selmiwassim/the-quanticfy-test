@@ -10,6 +10,7 @@ const FiltersFoutains = ({ places, setFilteredPlaces, loading }) => {
   const [input, setInput] = useState('');
   const [selectedType, setSelectedType] = useState('');
   const [selectedDispo, setSelectedDispo] = useState('');
+  const [adress, setAdress] = useState(""); 
   const [showFilters, setShowFilters] = useState(false);
 
 
@@ -27,6 +28,8 @@ const FiltersFoutains = ({ places, setFilteredPlaces, loading }) => {
     let newInput = input;
     let newSelectedType = selectedType;
     let newSelectedDispo = selectedDispo;
+    let newAdress = adress;
+
 
     if (name === 'input') {
       newInput = value;
@@ -37,7 +40,10 @@ const FiltersFoutains = ({ places, setFilteredPlaces, loading }) => {
     } else if (name === 'disponibilité') {
       newSelectedDispo = value;
       setSelectedDispo(newSelectedDispo);
-    } 
+    } else if(name =='adress'){
+      newAdress = value;
+      setAdress(value);
+    }
 
 
     const filtered = places.filter(place => {
@@ -45,8 +51,9 @@ const FiltersFoutains = ({ places, setFilteredPlaces, loading }) => {
         const nameMatches = place.nom.toLowerCase().includes(newInput.toLowerCase());
         const typeMatches = newSelectedType === '' || newSelectedType === 'Tout' || place.type.toLowerCase() === newSelectedType.toLowerCase();        
         const dispoMatches = newSelectedDispo === '' || newSelectedDispo === 'Vérifier la disponibilité' || place.dispo.toLowerCase() === newSelectedDispo.toLowerCase();
+        const adressMatches = place.adresse.toLowerCase().includes(newAdress.toLowerCase());
 
-      return nameMatches && typeMatches && dispoMatches;
+      return nameMatches && typeMatches && dispoMatches && adressMatches;
     });
     console.log(filtered)
     setFilteredPlaces(filtered);
@@ -64,6 +71,7 @@ const FiltersFoutains = ({ places, setFilteredPlaces, loading }) => {
     setInput('');
     setSelectedType('');
     setSelectedDispo('');
+    setAdress('');
     setFilteredPlaces(places); 
   };
 
@@ -123,6 +131,17 @@ const FiltersFoutains = ({ places, setFilteredPlaces, loading }) => {
                 <option value="Oui">Oui</option>
               </select>
             </label>
+            <label className="filter-element">
+            Adresse
+          <input  
+              className='adress-input'
+              type="text"
+              placeholder="Recherche par adresse ..."
+              name="adress"
+              value={adress}
+              onChange={handleFilterChange}
+            />
+          </label>
             
             <div className='remove-filters' onClick={resetFilters}>
               Remove filters

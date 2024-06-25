@@ -1,4 +1,6 @@
 import NavigationBar from "./navBar";
+import { NavLink,Link } from 'react-router-dom';
+
 
 const HomePage = () => {
 
@@ -18,7 +20,8 @@ const HomePage = () => {
               <p className="subsection">
                 Explorez les ilots de fraîcheur et les fontaines à boire à proximité 
                 et profitez d'une expérience agréable en plein air.</p>
-              <button className="start-button">Trouver Votre Endroit</button>
+                
+              <button className="start-button"><NavLink to="/islands" className="start-button">Trouver Votre Endroit</NavLink></button>
             </div>
             <div className="right-section">
                 <div className="image-wrapper">

@@ -11,6 +11,7 @@ const FiltersIslands = ({ places, setFilteredPlaces, loading }) => {
   const [selectedType, setSelectedType] = useState('');
   const [selectedPayment, setSelectedPayment] = useState('');
   const [chosenDate, setChosenDate] = useState(""); 
+  const [adress, setAdress] = useState(""); 
   const [showFilters, setShowFilters] = useState(false);
 
 
@@ -29,6 +30,7 @@ const FiltersIslands = ({ places, setFilteredPlaces, loading }) => {
     let newSelectedType = selectedType;
     let newSelectedPayment = selectedPayment;
     let newChosenDate = chosenDate;
+    let newAdress = adress;
 
     if (name === 'input') {
       newInput = value;
@@ -40,8 +42,11 @@ const FiltersIslands = ({ places, setFilteredPlaces, loading }) => {
       newSelectedPayment = value;
       setSelectedPayment(newSelectedPayment);
     } else if (name === 'date') {
-        newChosenDate = value;
-        setChosenDate(value);          
+      newChosenDate = value;
+      setChosenDate(value);          
+    } else if(name =='adress'){
+      newAdress = value;
+      setAdress(value);
     }
 
 
@@ -51,8 +56,9 @@ const FiltersIslands = ({ places, setFilteredPlaces, loading }) => {
         const typeMatches = newSelectedType === '' || newSelectedType === 'Tout' || place.type.toLowerCase() === newSelectedType.toLowerCase();        
         const paymentMatches = newSelectedPayment === '' ||  newSelectedPayment === 'Sélectionnez le paiement' || newSelectedPayment.toLowerCase() === place.cout.toLowerCase();
         const dateMatches = newChosenDate === '' || (new Date(place.debut) <= new Date(newChosenDate) && new Date(place.fin) >= new Date(newChosenDate));
+        const adressMatches = place.adresse.toLowerCase().includes(newAdress.toLowerCase());
 
-      return nameMatches && typeMatches && paymentMatches && dateMatches;
+      return nameMatches && typeMatches && paymentMatches && dateMatches && adressMatches;
     });
 
     setFilteredPlaces(filtered);
@@ -71,6 +77,7 @@ const FiltersIslands = ({ places, setFilteredPlaces, loading }) => {
     setSelectedType('');
     setSelectedPayment('');
     setChosenDate(null); 
+    setAdress('');
     setFilteredPlaces(places); 
   };
 
@@ -99,7 +106,7 @@ const FiltersIslands = ({ places, setFilteredPlaces, loading }) => {
         <input
             className="search-input"
             type="text"
-            placeholder="Search by place name..."
+            placeholder="Recherche par nom de l'ilots..."
             name="input"
             value={input}
             onChange={handleFilterChange}
@@ -138,6 +145,17 @@ const FiltersIslands = ({ places, setFilteredPlaces, loading }) => {
               value={chosenDate || ""}
               onChange={handleFilterChange}
               
+            />
+          </label>
+          <label className="filter-element">
+            Adresse
+          <input  
+              className='adress-input'
+              type="text"
+              placeholder="Recherche par adresse ..."
+              name="adress"
+              value={adress}
+              onChange={handleFilterChange}
             />
           </label>
           <div className='remove-filters' onClick={resetFilters}>

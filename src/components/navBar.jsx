@@ -18,10 +18,10 @@ const NavigationBar = () => {
           className="nav-bar-logo"
         />
       </NavLink>
-      <div >
+      <div>
       <NavLink to="/islands" >Ilots de fraîcheur</NavLink>
       </div>
-      <div >
+      <div>
       <NavLink  to="/fountains" > Fontaines à boire</NavLink>
       </div>
       <div className="se-connecter-button">

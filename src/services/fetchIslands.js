@@ -14,8 +14,7 @@ const equipementsPlaces = fetch('https://opendata.paris.fr/api/explore/v2.1/cata
 
             if (matches) {
                     debut = `20${matches[0].replace(/(\d{2})\/(\d{2})\/(\d{2})/, '$3-$2-$1')}`;
-                    fin = `20${matches[1].replace(/(\d{2})\/(\d{2})\/(\d{2})/, '$3-$2-$1')}`;
-                
+                    fin = `20${matches[1].replace(/(\d{2})\/(\d{2})\/(\d{2})/, '$3-$2-$1')}`;     
             }
 
 
