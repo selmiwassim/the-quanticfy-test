@@ -79,7 +79,7 @@ const DisplayIslands = () => {
                               </tr>
                           );
                       })
-                    ): <tr><td>No results found</td></tr>}
+                    ): <tr><td>Pas de Résultas</td></tr>}
                 </tbody>
             </table>
     </div>

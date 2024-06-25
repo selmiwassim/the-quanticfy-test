@@ -100,7 +100,7 @@ const FiltersFoutains = ({ places, setFilteredPlaces, loading }) => {
           <input
             className="search-input"
             type="text"
-            placeholder="Search by place name..."
+            placeholder="Recherche par nom..."
             name="input"
             value={input}
             onChange={handleFilterChange}
@@ -110,7 +110,7 @@ const FiltersFoutains = ({ places, setFilteredPlaces, loading }) => {
         <div className="filters-container">
           <button className="filter-button" onClick={toggleFilters}>
             <IoFilterSharp className="filter-icon" />
-            Filters
+            Filtres
           </button>
         </div>
         {showFilters && (
@@ -144,7 +144,8 @@ const FiltersFoutains = ({ places, setFilteredPlaces, loading }) => {
           </label>
             
             <div className='remove-filters' onClick={resetFilters}>
-              Remove filters
+            Supprimer les filtres
+
             </div>
           </div>
         )}

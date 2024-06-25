@@ -116,7 +116,7 @@ const FiltersIslands = ({ places, setFilteredPlaces, loading }) => {
         <div className="filters-container">
           <button className="filter-button" onClick={toggleFilters}>
             <IoFilterSharp className="filter-icon" />
-            Filters
+            Filtres
           </button>
         </div>
         {showFilters && (
@@ -159,7 +159,7 @@ const FiltersIslands = ({ places, setFilteredPlaces, loading }) => {
             />
           </label>
           <div className='remove-filters' onClick={resetFilters}>
-              Remove Filters
+            Supprimer les filtres
           </div>
         </div>
       )}
